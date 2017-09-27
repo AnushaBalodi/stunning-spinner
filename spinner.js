@@ -13,6 +13,12 @@ $.fn.Spinner = function(options, callback) {
     return this;
 };
 
+$.fn.callback = function(fnc, context, args){
+    if(fnc && typeof fnc === 'function'){
+        fnc.apply(context||window, args);
+    }
+};
+
 Spinner = (function() {
 
     var spinnerEvents = {
